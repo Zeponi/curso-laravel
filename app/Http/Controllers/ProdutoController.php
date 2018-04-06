@@ -10,7 +10,9 @@ class ProdutoController extends Controller
 {
     public function getIndex()
     {
-    	return "Index de Produto";
+        $produto = ["nome"=>"livro"];
+
+    	return view('produto.index', compact('produto'));
     }
     public function getLista()
     {
