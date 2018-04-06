@@ -15,7 +15,7 @@ class LivroController extends Controller
      */
     public function index()
     {
-        //
+        return view('livro.index');
     }
 
     /**
