@@ -11,6 +11,12 @@ Route::get('livro',['uses'=>'LivroController@index','as'=>'livro.index']);
 Route::controller('produto','ProdutoController');
 
 Route::get('home',function(){
-	$usuario = "Guilherme";
-	return view('home',compact('usuario'));
+	$usuarios = array(
+		["nome" => "Gustavo"],
+		["nome" => "Ana"],
+		["nome" => "Camila"],
+		["nome" => "Pedro"],
+	);
+	$livros = [];
+	return view('home',compact('usuarios', 'livros'));
 });
