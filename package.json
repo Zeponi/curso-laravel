@@ -1,6 +1,6 @@
 {
-  "name" : "curso-laravel",
-  "version" : "1.0.0"                
+  "name": "curso-laravel",
+  "version": "1.0.0"                
   "private": true,
   "scripts": {
     "prod": "gulp --production",
