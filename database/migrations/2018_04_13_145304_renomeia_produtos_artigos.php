@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMigrationCliente extends Migration
+class RenomeiaProdutosArtigos extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,9 @@ class CreateMigrationCliente extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('produtos', function (Blueprint $table) {
+            Schema::rename('produtos', 'artigos');
+        });
     }
 
     /**
@@ -22,6 +24,8 @@ class CreateMigrationCliente extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('produtos', function (Blueprint $table) {
+            Schema::rename('artigos', 'produtos');
+        });
     }
 }
