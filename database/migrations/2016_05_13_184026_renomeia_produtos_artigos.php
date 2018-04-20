@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AdicionaDescricaoTelefoneTabelaTelefones extends Migration
+class RenomeiaProdutosArtigos extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class AdicionaDescricaoTelefoneTabelaTelefones extends Migration
      */
     public function up()
     {
-        Schema::table('telefones', function (Blueprint $table) {
-            $table->string('descricao');
-            $table->string('telefone');
+        Schema::table('produtos', function (Blueprint $table) {
+            Schema::rename('produtos','artigos');
         });
     }
 
@@ -25,8 +24,8 @@ class AdicionaDescricaoTelefoneTabelaTelefones extends Migration
      */
     public function down()
     {
-        Schema::table('telefones', function (Blueprint $table) {
-            //
+        Schema::table('produtos', function (Blueprint $table) {
+            Schema::rename('artigos','produtos');
         });
     }
 }

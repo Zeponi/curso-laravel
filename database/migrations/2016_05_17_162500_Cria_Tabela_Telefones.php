@@ -22,6 +22,7 @@ class CriaTabelaTelefones extends Migration
             $table->foreign('cliente_id')->references('id')->on('clientes');
             
         });
+
     }
 
     /**
