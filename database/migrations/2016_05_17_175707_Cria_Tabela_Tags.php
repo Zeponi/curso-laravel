@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CriaLivrosTabela extends Migration
+class CriaTabelaTags extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CriaLivrosTabela extends Migration
      */
     public function up()
     {
-        Schema::create('livros', function(Blueprint $table){
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo');
-            $table->string('descricao');
+            $table->string('nome');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CriaLivrosTabela extends Migration
      */
     public function down()
     {
-        Screma::drop('livros');
+        Schema::drop('tags');
     }
 }
