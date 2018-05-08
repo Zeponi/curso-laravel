@@ -19,7 +19,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    @if(!Auth::guest())
                     <li><a href="{{ route('cliente.index') }}">Cliente</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -5,11 +5,13 @@
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
-                <div class="panel-heading">Lista de Clientes</div>
+                <ol class="breadcrumb panel-heading">
+                    <li class="active">Clientes</li>
+                </ol>
 
                 <div class="panel-body">
                     <p>
-                        <a class="btn btn-info" href="#">Adicionar</a>
+                        <a class="btn btn-info" href="{{ route('cliente.adicionar') }}">Adicionar</a>
                     </p>
                     
                     <table class="table table-bordered">
