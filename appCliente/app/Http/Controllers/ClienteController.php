@@ -9,7 +9,7 @@ use App\Cliente;
 
 class ClienteController extends Controller
 {
-    
+
 	public function __construct()
     {
         $this->middleware('auth');
@@ -31,7 +31,31 @@ class ClienteController extends Controller
             'msg'=>"Cliente Adicionado com Sucesso!",
             'class'=>"alert-success"
         ]);
-    	return redirect()->route('cliente.adicionar');
+        return redirect()->route('cliente.adicionar');
+    }
+
+    public function editar($id) {
+        $cliente = Cliente::find($id);
+        if(!$cliente) {
+            \Session::flash('flash_message',[
+                'msg'=>"Não existe esse cliente cadastrado! Deseja cadastrar um novo cliente?",
+                'class'=>"alert-danger"
+            ]);
+            return redirect()->route('cliente.adicionar');
+        }
+
+        return view('cliente.editar',compact('cliente'));
+    }
+
+    public function atualizar(Request $request,$id) {
+
+        $cliente = Cliente::find($id)->update($request->all());
+        
+        \Session::flash('flash_message',[
+            'msg'=>"Cliente atualizado com sucesso!",
+            'class'=>"alert-success"
+        ]);
+        return redirect()->route('cliente.index');
     }
 
 }
