@@ -58,4 +58,15 @@ class ClienteController extends Controller
         return redirect()->route('cliente.index');
     }
 
+    public function deletar($id) {
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+
+        \Session::flash('flash_message',[
+            'msg'=>"Cliente deletado com Sucesso!",
+            'class'=>"alert-success"
+        ]);
+        return redirect()->route('cliente.index');
+    }
+
 }
