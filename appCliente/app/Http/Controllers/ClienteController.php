@@ -60,6 +60,15 @@ class ClienteController extends Controller
 
     public function deletar($id) {
         $cliente = Cliente::find($id);
+
+        if(!$cliente->deletarTelefones()) {
+            \Session::flash('flash_message',[
+                'msg'=>"Registro não pode ser deletado!",
+                'class'=>"alert-danger"
+            ]);
+            return redirect()->route('cliente.index');
+        }
+
         $cliente->delete();
 
         \Session::flash('flash_message',[

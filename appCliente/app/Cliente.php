@@ -18,7 +18,9 @@ class Cliente extends Model
 
 	public function deletarTelefones() {
 		foreach ($this->telefones as $tel) {
-			
+			$tel->delete();
 		}
+
+		return true;
 	}
 }
