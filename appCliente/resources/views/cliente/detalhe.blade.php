@@ -38,7 +38,7 @@
                         </tbody>
                     </table>
                      <p>
-                        <a class="btn btn-info" href="#">Adicionar Telefone</a>
+                        <a class="btn btn-info" href="{{ route('telefone.adicionar',$cliente->id) }}">Adicionar Telefone</a>
                     </p>
                 </div>
             </div>
