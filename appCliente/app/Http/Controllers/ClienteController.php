@@ -25,6 +25,11 @@ class ClienteController extends Controller
     	return view('cliente.adicionar');
     }
 
+    public function detalhe($id) {
+        $cliente = Cliente::find($id);
+        return view('cliente.detalhe', compact('cliente'));
+    }
+
     public function salvar(Request $request) {
     	Cliente::create($request->all());
         \Session::flash('flash_message',[
