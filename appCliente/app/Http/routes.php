@@ -23,3 +23,4 @@ Route::post('/cliente/salvar', ['uses'=>'ClienteController@salvar', 'as' =>'clie
 Route::get('/cliente/editar/{id}', ['uses'=>'ClienteController@editar', 'as' =>'cliente.editar']);
 Route::put('/cliente/atualizar/{id}', ['uses'=>'ClienteController@atualizar', 'as' =>'cliente.atualizar']);
 Route::get('/cliente/deletar/{id}', ['uses'=>'ClienteController@deletar', 'as' =>'cliente.deletar']);
+Route::get('/cliente/detalhe/{id}', ['uses'=>'ClienteController@detalhe', 'as' =>'cliente.detalhe']);
