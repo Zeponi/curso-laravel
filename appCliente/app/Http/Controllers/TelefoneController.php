@@ -19,7 +19,7 @@ class TelefoneController extends Controller
     	return view('telefone.adicionar',compact('cliente'));
     }
 
-    public function salvar(Request $request,$id) {
+    public function salvar(\App\Http\Requests\TelefoneRequest $request,$id) {
     	$telefone = new Telefone;
     	$telefone->titulo = $request->input('titulo');
     	$telefone->telefone = $request->input('telefone');
