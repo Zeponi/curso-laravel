@@ -30,8 +30,8 @@
                                 <td>{{ $telefone->titulo }}</td>
                                 <td>{{ $telefone->telefone }}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="#">Editar</a>
-                                    <a class="btn btn-danger" href="javascript:confirm('Deletar esse registro?') ? window.location.href='#' : ''">Deletar</a>
+                                    <a class="btn btn-warning" href="{{ route('telefone.editar',$telefone->id) }}">Editar</a>
+                                    <a class="btn btn-danger" href="javascript:confirm('Deletar esse registro?') ? window.location.href='{{ route('telefone.deletar',$telefone->id) }}' : ''">Deletar</a>
                                 </td>
                             </tr>
                             @endforeach
