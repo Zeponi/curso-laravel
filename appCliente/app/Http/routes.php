@@ -12,7 +12,55 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	//array_add()
+	$array = ['nome'=>'Camila','idade'=>'20'];
+	$array = array_add($array,'email','camila@mail.com');
+	$array = array_add($array,'amigo','Guilherme');
+	//dd($array);
+
+	//array_collapse()
+	$array = [['banana','limão'],['vermelho','azul']];
+	$array = array_collapse($array);
+	//dd($array);
+
+	//array_divide()
+	list($key,$value) = array_divide(['nome'=>'Camila','idade'=>'20']);
+	//dd($key,$value);
+
+	//array_except()
+	$array = ['nome'=>'Camila','idade'=>'20'];
+	$array = array_except($array,['idade']);
+	//dd($array);
+
+	//base_path()
+	$path = base_path('App');
+	//dd($path);
+
+	//database_path()
+	$path = database_path('App');
+	//dd($path);
+
+	//public_path()
+	$path = public_path();
+	//dd($path);
+
+	//storage_path()
+	$path = storage_path();
+	//dd($path);
+
+	//camel_case()
+	$text = "Guilherme está criando uma nova aula";
+	//dd(camel_case($text));
+
+	//snake_case()
+	$text = "GuilhermeEstáCriandoUmaNovaAula";
+	//dd(snake_case($text));
+
+	//str_limit()
+	$text = "Guilherme está criando uma nova aula";
+	dd(str_limit($text,10));
+
+	return view('welcome');
 });
 
 Route::auth();
